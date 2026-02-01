@@ -33,7 +33,7 @@ app.get("/api/photos", (req, res) => {
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 // 2. Anything that doesn't match an API route, send back index.html
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
