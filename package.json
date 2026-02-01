@@ -6,11 +6,10 @@
   "type": "commonjs",
   "scripts": {
     "start": "node server.js",
-    "dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
-    "client-install": "cd client && npm install",
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "client-install": "npm install --prefix client",
+    "client": "npm start --prefix client",
+    "build": "npm install && npm run client-install && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
